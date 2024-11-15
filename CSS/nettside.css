@@ -1,0 +1,150 @@
+@import url(https://fonts.google.com/);
+
+
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: auto;
+    width: auto;
+    background-image: url("/bilder/thomas2.jpg");
+    background-color: #cccccc;
+    animation: fadeIn 3s ease-in-out;
+}
+
+
+
+.klasse {
+    /* her er koden for tittlen på nettsiden*/
+    background: linear-gradient(90deg, hsl(0, 0%, 43%), hsl(0, 0%, 43%));
+    font-size: 36px; /* font size */
+    font-weight: bold; /* gjør tittlen bold */
+    color: #fff; /* Tittel farge */
+    animation: fadeIn 3s ease-in-out, bounce 2s infinite;
+    text-align: center; /* sentrere teksten */
+    margin: 20px 0; /* Adds space above and below the title */
+    text-transform: uppercase; /* gjør sånn at alt er "uppercases" */
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* skygge for titlen på nettsiden */
+   /*animationen er under denne kommentaren*/
+    font-family:monospace; 
+    transition: 0.3s ease-in;
+    display: inline-block;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s steps(19), 
+        cursor .4s step-end infinite alternate;
+
+}
+/*får cursoren til å blinke*/
+@keyframes cursor{
+    50% { border-color: transparent}
+
+}
+
+
+@keyframes typing{
+    from{width: 0}
+}
+
+.lenker {
+    font-size: 36px;
+    font-weight: bold;
+    height: auto;
+    width: auto;
+    text-align: center;
+  background-color: grey;
+  text-decoration: none;
+}
+
+
+.socials{
+    border: #1c1f2b;
+    border-radius: 1px;
+    background: linear-gradient(90deg, hsl(0, 0%, 43%), hsl(0, 0%, 43%));
+}
+
+
+     
+
+
+
+
+
+
+.info{
+    
+    font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 30px;
+    letter-spacing: 1,5px;
+    text-align: center;
+    color: white;
+    margin:  20px auto;
+    padding: 2em;
+    width: 600px;
+    background: #1c1f2b;
+    position: relative;
+    border-radius: 10px;
+    
+}
+
+.info::before{
+    filter:blur(1.5rem);
+    opacity: 1;
+}
+
+.info::after, .info::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, blue, green, red, pink, yellow);
+    top: 50%;
+    left:50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.overskrift{
+    font-size: 56px;
+}
+
+ /* background bilde transparent skal være her */
+
+.bilde{
+    width: auto;
+    height: auto;
+    opacity: 0.3;
+    position: absolute;
+    background: transparent;
+}
+
+
+    

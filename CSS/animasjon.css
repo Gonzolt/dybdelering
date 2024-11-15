@@ -1,0 +1,96 @@
+/* animasjon */
+
+
+.html{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: var(--body-color);
+    color:#a2a5b3;
+    align-content: center;
+    transition: var(--tran-05)
+
+}
+
+h1{
+    color: white;
+}
+
+.sosialemedier{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+     text-align: center;
+}
+
+
+
+.btn {
+    /* detta e for fonten for at den skal se bedre ut*/ 
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    color: var(--clr-accent);
+    /*detta e for bakkgrunnen*/
+    background-color: var(--clr-rgba);
+    border: 5px solid;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    transform: translateY(-10px);
+}
+
+
+/* animasjon bak tekst boksen*/
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card{
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background: #1c1f2b;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+
+
+.card::after, .card::before{
+    
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, blue, green, red, pink, yellow);
+    top: 50%;
+    left:50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.card::before{
+    filter:blur(1.5rem);
+    opacity: 1;
+
+
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+

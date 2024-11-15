@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.intro-container, .quiz-container {
+    text-align: center;
+}
+
+.hidden {
+    display: none; /* Hide elements initially */
+}
+
+#quiz-image {
+    width: 300px; /* Adjust size as needed */
+    height: 300px; /* Make height equal to width for round shape */
+    opacity: 0; /* Start invisible */
+    animation: fadeInImage 2s forwards; /* Animate image fade-in */
+    border: 5px solid rgba(255, 0, 0, 0.5); /* Red border */
+    border-radius: 50%; /* Make the image round */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Glowing effect */
+    position: relative;
+    z-index: 1; /* On top of overlay */
+}
+
+@keyframes fadeInImage {
+    0% { opacity: 0; /* Start invisible */ }
+    100% { opacity: 1; /* Fully visible */ }
+}
+
+#intro-text {
+    opacity: 0; /* Start invisible */
+    animation: fadeInText 2s forwards; /* Animation for intro text */
+    animation-delay: 2s; /* Delay to fade in after image */
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+#start-btn {
+    opacity: 0; /* Start invisible */
+    animation: fadeInButton 2s forwards; /* Animation for start button */
+    animation-delay: 4s; /* Delay to fade in after text */
+    background-color: rgba(255, 0, 0, 0.8); /* Red background */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    position: relative;
+    z-index: 1; /* On top of overlay */
+}
+
+@keyframes fadeInButton {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.shake {
+    animation: shake 0.5s forwards; /* Shaking animation */
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px, -5px); }
+    50% { transform: translate(5px, 5px); }
+    75% { transform: translate(-5px, -5px); }
+    100% { transform: translate(0); }
+}
+
+.floating-ghost {
+    position: absolute;
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    background: url('path/to/ghost.png') no-repeat center center; /* Add your ghost image */
+    background-size: contain;
+    animation: float 3s infinite; /* Floating animation */
+    z-index: 0; /* Behind other elements */
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.intro-container {
+    position: relative;
+}
+
+.intro-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: 0; /* Behind other elements */
+}
